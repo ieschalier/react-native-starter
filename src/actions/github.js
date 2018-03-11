@@ -1,3 +1,5 @@
+// @flow
+
 import {
   GITHUB_USER_LOADING,
   GITHUB_USER_SUCCESS,
@@ -5,13 +7,17 @@ import {
   GITHUB_USER_CLEAR,
 } from '../constants/actionsType'
 
-export const fetchGithubUser = username => async dispatch => {
+type Action = { +type: string } | { +type: string, user: {} }
+
+type FetchGithubUser = (username: string) => (dispatch: (Action) => void) => Promise<any>
+
+export const fetchGithubUser: FetchGithubUser = username => async (dispatch) => {
   dispatch({ type: GITHUB_USER_LOADING })
 
   const res = await fetch(`https://api.github.com/users/${username}`)
 
   if (res.ok) {
-    const user = await res.json()
+    const user: {} = await res.json()
     dispatch({
       type: GITHUB_USER_SUCCESS,
       user,

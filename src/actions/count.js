@@ -1,9 +1,12 @@
-import { INCREMENT, DECREMENT } from '../constants/actionsType'
+// @flow
 
-export const increment = () => ({
+import { INCREMENT, DECREMENT } from '../constants/actionsType'
+import type { GenericAction as Action } from '../types/Action'
+
+export const increment = (): Action => ({
   type: INCREMENT,
 })
 
-export const decrement = () => ({
+export const decrement = (): Action => ({
   type: DECREMENT,
 })
