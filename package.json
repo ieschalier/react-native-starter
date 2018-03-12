@@ -12,6 +12,7 @@
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.7.0",
     "flow-bin": "^0.67.1",
+    "flow-coverage-report": "^0.5.0",
     "flow-typed": "^2.3.0",
     "jest-expo": "25.0.0",
     "react-native-scripts": "1.11.1",
@@ -23,7 +24,9 @@
     "eject": "react-native-scripts eject",
     "android": "react-native-scripts android",
     "ios": "react-native-scripts ios",
-    "test": "node node_modules/jest/bin/jest.js"
+    "test": "node node_modules/jest/bin/jest.js",
+    "flow_coverage":
+      "flow-coverage-report -i 'src/**/*.js' -i 'src/**/*.jsx' -x 'src/test/**' -t html -t json -t text --threshold 90"
   },
   "jest": {
     "preset": "jest-expo"
