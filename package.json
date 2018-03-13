@@ -25,8 +25,7 @@
     "android": "react-native-scripts android",
     "ios": "react-native-scripts ios",
     "test": "node node_modules/jest/bin/jest.js",
-    "flow_coverage":
-      "flow-coverage-report -i 'src/**/*.js' -i 'src/**/*.jsx' -x 'src/test/**' -t html -t json -t text --threshold 90"
+    "flow_coverage": "flow-coverage-report -i 'src/**/*.js' -x 'src/test/**' -t html -t text"
   },
   "jest": {
     "preset": "jest-expo"

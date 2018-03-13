@@ -4,14 +4,16 @@ import React from 'react'
 import { View, Button, Text } from 'react-native'
 import { connect } from 'react-redux'
 import actions from '../actions'
+import type { FetchGithubUser } from '../actions/github'
 import type { State } from '../types/Sate'
+import type { GenericAction } from '../types/Action'
 
 type Props = {
   user: {
     login: string,
   },
-  fetchGithubUser: (username: string) => void,
-  clearGithubUser: () => void,
+  fetchGithubUser: FetchGithubUser,
+  clearGithubUser: () => GenericAction,
 }
 
 const GithubUser = ({ user, fetchGithubUser, clearGithubUser }: Props) => (

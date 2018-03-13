@@ -1,13 +1,16 @@
+// @flow
+
 import React from 'react'
 import { View, Text, Button } from 'react-native'
 import { connect } from 'react-redux'
 import actions from '../actions'
 import type { State } from '../types/Sate'
+import type { GenericAction } from '../types/Action'
 
 type Props = {
   count: number,
-  increment: () => void,
-  decrement: () => void,
+  increment: () => GenericAction,
+  decrement: () => GenericAction,
 }
 
 const Counter = ({ count, increment, decrement }: Props) => (
