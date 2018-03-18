@@ -53,6 +53,7 @@
   "dependencies": {
     "eslint-plugin-react-native": "^3.2.1",
     "expo": "^25.0.0",
+    "polished": "^1.9.2",
     "react": "16.2.0",
     "react-native": "0.52.0",
     "react-redux": "^5.0.7",

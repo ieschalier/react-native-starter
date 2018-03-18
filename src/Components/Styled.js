@@ -1,8 +1,14 @@
 import styled from 'styled-components'
+import { mix } from 'polished'
+
+const interpolateColor = ({ value = 0 }) => {
+  const weight = Math.max(0, Math.min(value / 10, 1))
+  return `color: ${mix(weight, '#3f3', '#111')}`
+}
 
 export const Value = styled.Text`
   font-size: 25px;
-  color: ${({ good }) => (good ? 'green' : '#111a')};
+  ${interpolateColor};
 `
 
 export const Container = styled.View`

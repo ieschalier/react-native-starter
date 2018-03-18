@@ -22,7 +22,7 @@ type Props = {
 
 const Counter = ({ count, increment, decrement }: Props) => (
   <Container>
-    <Value good={count > 10}>{count}</Value>
+    <Value value={count}>{count}</Value>
     <Button onPress={increment} title="Increment" />
     <Button onPress={decrement} title="Decrement" />
   </Container>
