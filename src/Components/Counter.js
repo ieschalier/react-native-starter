@@ -1,24 +1,30 @@
 // @flow
 
 import React from 'react'
-import { View, Text, Button } from 'react-native'
+import { Text, Button } from 'react-native'
 import { connect } from 'react-redux'
+import styled from 'styled-components'
 import actions from '../actions'
 import type { State } from '../types/Sate'
 import type { GenericAction } from '../types/Action'
 
+const Container = styled.View`
+  align-items: center;
+  justify-content: center;
+`
+
 type Props = {
   count: number,
   increment: () => GenericAction,
-  decrement: () => GenericAction,
-}
+  decrement: () => GenericAction
+};
 
 const Counter = ({ count, increment, decrement }: Props) => (
-  <View style={{ alignItems: 'center', justifyContent: 'center' }}>
+  <Container>
     <Text>{count}</Text>
     <Button onPress={increment} title="Increment" />
     <Button onPress={decrement} title="Decrement" />
-  </View>
+  </Container>
 )
 
 export default connect(
