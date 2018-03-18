@@ -1,12 +1,13 @@
 // @flow
 
 import React from 'react'
-import { Text, Button } from 'react-native'
+import { Button } from 'react-native'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
 import actions from '../actions'
 import type { State } from '../types/Sate'
 import type { GenericAction } from '../types/Action'
+import { Value } from './Styled'
 
 const Container = styled.View`
   align-items: center;
@@ -21,7 +22,7 @@ type Props = {
 
 const Counter = ({ count, increment, decrement }: Props) => (
   <Container>
-    <Text>{count}</Text>
+    <Value good={count > 10}>{count}</Value>
     <Button onPress={increment} title="Increment" />
     <Button onPress={decrement} title="Decrement" />
   </Container>

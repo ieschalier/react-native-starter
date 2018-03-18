@@ -1,20 +1,9 @@
 // @flow
 
 import React from 'react'
-import styled from 'styled-components'
 import Counter from './Counter'
 import GithubUser from './GithubUser'
-
-const Container = styled.View`
-  flex: 1;
-  align-items: center;
-  justify-content: center;
-`
-
-const Image = styled.Image`
-  width: 250;
-  height: 100;
-`
+import { Container, Image } from './Styled'
 
 const App = () => (
   <Container>

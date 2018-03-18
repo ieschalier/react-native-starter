@@ -1,13 +1,14 @@
 // @flow
 
 import React from 'react'
-import { Button, Text } from 'react-native'
+import { Button } from 'react-native'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
 import actions from '../actions'
 import type { FetchGithubUser } from '../actions/github'
 import type { State } from '../types/Sate'
 import type { GenericAction } from '../types/Action'
+import { Value } from './Styled'
 
 const Container = styled.View`
   margin-top: 30;
@@ -25,7 +26,7 @@ type Props = {
 
 const GithubUser = ({ user, fetchGithubUser, clearGithubUser }: Props) => (
   <Container>
-    {user && <Text>{user.login}</Text>}
+    {user && <Value>{user.login}</Value>}
     <Button onPress={() => fetchGithubUser('ieschalier')} title="Fetch user" />
     <Button onPress={clearGithubUser} title="Clear user" />
   </Container>
